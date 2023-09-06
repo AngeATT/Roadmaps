@@ -1,0 +1,73 @@
+Domain hexagon → Application Hexagon → ( ports and use cases to perform ) → Framework Hexagon(how to expose application features) materialize technology decisions through adapters
+
+Rôle du domaine : model the knowledge required to identify, categorize, and correlate
+
+De quoi est composé l’architecture hexagonale ? Quel est son objectif ?
+
+Comment on choisi une technologie pour l’appliquer à l’architecture ?
+
+C’est quoi une entité ? 
+entities corresponding to critical business data and rules.
+
+La base d'une application solide ? Un domaine très bien réprésenté
+La base d'une application qui ne va pas fonctionné ? If we fail to grasp that problem domain and how it translates
+into entities and other Domain objects
+
+Domain hexagon encapsulates business rules with entities and value objects
+
+De quoi est composé le domaine ? Whatever kind of object categories you feel are good for representing the problem domain
+Entité ? caractéristiques ?
+Entities help us build more expressive code. What characterizes an entity is its sense of
+continuity and identity
+La différence entre un objet de valeur et une entité :
+When there is no need to identify something uniquely, as well as when we are more concerned about the object's attributes than its identity
+
+Application hexagon
+This hexagon expresses the software's user intent and features based on the Domain hexagon's business rules
+uses cases : what the software can do through interfaces
+input ports : allow us to implement software intent on domain terms.
+
+output port : fetch data from external resources to achieve its goals, interfaces describing, in a technology-agnostic way, which kind of data a use case or input port would need to get from outside to perform its operations.
+
+Framework Hexagon :
+Comment communiquer avec l'exterieur de l'hexagone ?
+communication can occur in two forms, one known as driving and another known as driven
+driver side : input adapters 
+driven side output adapters
+
+Driving operations : Driving operations are the ones that request actions to the software. 
+Exemples de driving operations :
+It can be a user with a command-line client or a frontend application
+Pourquoi driving operations :
+Driving is used because those external entities are driving the behavior of the system
+
+Comment mettre en place ?
+This communication occurs through an Application Programming Interface (API) built on top of the input adapters.
+Pour diriger des actions sur l'application, on va utiliser des input adapters
+How external entities will interact with your system and then translate
+their request to your domain's application.
+
+Driven operations 
+application and go into the outside world to get data to fulfill the software's needs.
+Comment on les implémente ? Via des outputs adapters
+
+Role des output ports :
+operations are driven and controlled by the hexagonal
+application itself, triggering actions in other external systems.
+output port tells us which kind of data it needs to perform some
+application-specific tasks
+Role des adapters :
+Trouver un moyen d'aller chercehr les données et les fournir
+
+Advantages of the hexagonal approach
+
+
+===Domain Hexagon :
+Il faut coupler les actions, comportement de l'objet et l'entité du domaine pour éviter d'aller trop trop dans un autre coin pour savoir ce que fait l'entité
+Mais pas trop pour éviter des classes bizzares
+Entité 
+
+Objet de valeur :
+Immutable, et ne dispose pas d'entité
+
+Aggregate à chercher

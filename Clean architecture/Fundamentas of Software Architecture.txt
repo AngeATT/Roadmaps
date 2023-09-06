@@ -1,0 +1,3 @@
+hat is Software architecture ?
+
+Architecture characteristics, architecture decisions, and design principles is also needed to fully understand the architecture of the system.

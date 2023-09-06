@@ -1,0 +1,30 @@
+-Les valeurs d'une application
+Behavior, architecture
+
+-Inversion de dépendance : Rôle, comment le mettre en oeuvre, sa relation avec l'OO
+
+-Objectif même de l'inversion de dépendance
+
+-Rôle de l'OO pour l'architecte
+
+-Rôle de l'immutabilité ? comment la mettre en oeuvre en java
+
+-Principes SOLID : objectifs 
+
+S : role et mise en place, ne pas faire l'amalgame, mise en place ?
+O : mise en place ?
+Vers ou les dépendances doivent pointer ?
+Organiser les composants en hierarchie ?
+
+-C'est quoi la dépendance transitive
+-LSP
+
+-ISP : Ne pas dépendre de module qui dépendent de plus que ce que l'on a besoin ( n'existe pas pour les langage dynamique )
+
+-DIP : principe, mise en oeuvre
+04-08 à revoir le 06-08
+Component principles :
+Design des components
+Principes de composants reutilisables REP
+CCP : common closure principle
+CRP : 

@@ -1,0 +1,33 @@
+26/07/23
+Mise au point :
+Learn fundamentals déjà ok mais à relire pour réviser
+Loops : ok
+Exception handling : ok
+Getting Deeper : 
+Memory Management : premiere lecture effectué
+Collection Framework : connaissance débutant avancé
+
+26/07/2023
+Serialization : Définition, utilité, limites
+
+04-08
+-objet : 
+ce qu'il sait sur lui variables d'instance
+ce qu'il sait faire méthodes
+compréhension de la différence entre instance et variable primitive
+explication des variables primitives qui sont en fait des conteneurs de tailles différentes
+explication du cast 
+explication du rôle de la jvm, de la compilation, des class java
+Particularité de string qui crée comme un primitif mais qui est un objet
+reference qui pointe vers null lorsqu'elle n'est pas attribué, null occupe une certaine quantité en mémoire
+reference permet de localiser un objet dans la heap
+le fonctionnement du garbage collector, comment un objet est elligible à l'élimination
+le rôle de new, le fait qu'il alloue une certaine quantité de mémoire
+-Java passe tout par valeur => primitive
+-mais vu qu'une reference est un ensemble de bits qui permet de localiser un objet dans la heap...
+-encapsulation le fait de delimiter les conditions de changement d'une variable d'empêcher son accès et sa modification par n'importe qui
+-encapsulation : mettre nos variables en private
+- you can do whatever you want in the setter
+method, whereas you can’t do anything if your instance variables are public.
+-pourquoi il existe des setters qui ne vérifient rien ? parceque après on peut changer d'avis sans pour autant remettre en cause tout le code
+

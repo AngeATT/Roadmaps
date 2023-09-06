@@ -1,0 +1,7 @@
+https://leetcode.com/problems/increasing-triplet-subsequence/description/?envType=study-plan-v2&envId=leetcode-75
+
+https://leetcode.com/problems/container-with-most-water/submissions/1030330542/?envType=study-plan-v2&envId=leetcode-75
+
+https://leetcode.com/problems/max-consecutive-ones-iii/?envType=study-plan-v2&envId=leetcode-75
+
+https://leetcode.com/problems/max-consecutive-ones-iii/description/?envType=study-plan-v2&envId=leetcode-75

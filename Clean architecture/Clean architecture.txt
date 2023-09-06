@@ -1,0 +1,193 @@
+Values of an application :
+-Behavior : comment se comporte l'architecture
+-Architecture : Pourquoi la première année est moins coûteuse que la seconde ainsi  de suite ? It is this difference between scope and shape that often drives the growth in software development costs.
+L'architecture établie de l'application diffère de plus en plus des demandes du client.
+
+-Vaut mieux qu'un programme marche et soit difficile à modifier plutôt qu'un programme soit facile à changer mais ne marche pas ? However, there are systems that are practically impossible to change, because the cost of change exceeds the benefit of change.
+
+Pourquoi il faut convaincre les business manager d'avoir une architecture bonne dès le depart ? Il faut expliquer que plus tard le cout pour ajouter une nouvelle feat sera tellement élévé que le programme va devenir d<ifficile à maintenir.
+
+Separer les catégories des features :
+1. Urgent and important
+2. Not urgent and important
+3. Urgent and not important
+4. Not urgent and not important
+
+Ne jamais faire passer le 3 avant le 1. 
+
+-Rôle de l'équipe de developpeurs :
+It is the responsibility of the software development team to assert the importance of architecture over the urgency of features.
+
+Resumé : Rôle d'un développeur : se battre pour maintenir une architecture correcte en dépit de l'urgence de certaines features car on est partie prenante de l'application et notre rôle est de veiller à ce que le projet soit viable sur e long terme en priorisant les choses importantes à celles qui ne le sont qu'en surface.
+
+
+-Programming paradigms :
+.Structured programming :  Structured programming imposes discipline on direct transfer of control remplace les goto par des if else do while etc
+.OOP : allowing local variables declared by a function to
+exist long after the function returned. 
+Object-oriented programming imposes discipline on indirect transfer
+of control
+Functional programming : This effectively means that a functional language has no assignment statement Functional programming imposes discipline upon assignment.
+
+Structured programming :
+“Go To Statement Considered" Harmful
+Dijkstra once said, “Testing shows the presence, not the absence, of bugs.”
+All that tests can do, after sufficient testing effort, is allow us
+to deem a program to be correct enough for our purposes.
+
+C'est quoi la différence entre la programmation structurelle et OO ?
+moved the function call stack frame to the heap and invented OO
+
+Dependency inversion :
+The flow of control was dictated by the behavior of the system, and the
+source code dependencies were dictated by that flow of control
+
+The fact that OO languages provide safe and convenient polymorphism means
+that any source code dependency, no matter where it is, can be inverted.
+
+07-08-23
+Dependency inversion, and its implications for the software architect are profound.
+Qu'est ce qui se passe au runtime concernant les interfaces ?
+Les interfaces n'existent pas on appelle directement la fonction de la classe.
+
+Quel est l'utilité de l'inversion de dépendance ?
+
+Absolute control over the direction of all source code dependencies in the system.
+No matter which module does the calling and which module is called, the software architect can point the source code dependency in either direction.
+
+Objectif : Réarranger la dépendance du code source de notre système afin que la bd et l'UI dependent des business rules.
+
+This means that the UI and the database can be plugins to the business rules.
+It means that the source code of the business rules never mentions the UI or
+the database.
+
+This is independent deployability vient du fait que UI, BD, Buisiness sont des composants différents et peuvent être donc déployer indépendamment.
+Les changements de l'UI ou de la bd n'ont pas d'effets sur la business donc on ne devra redeployer uniquement ces composants la.
+
+OO pour un software architect ?
+OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system.
+
+Utilité donc de l'OO ?
+It allows the architect to create a plugin
+architecture, in which modules that contain high-level policies are
+independent of modules that contain low-level details.
+
+Functionnal programming 
+Mutable variables ? i dans une loop en java
+immutable variable ? x dans un langage comme clojure
+
+Probleme des mutables varibales ?  All race conditions, deadlock conditions, and concurrent update problems are due to mutable variables.
+
+mot clé final en java et l'immutabilité : final interdit de changer la référence d'un objet mais n'empeche pas que ce objet soit modifier via son api interne.
+Avantage de l'immutabilité ? Threads safe
+
+Segregation of mutability 
+segregate the application, or the services within the application, into mutable and immutable components.
+The immutable components perform their tasks in a purely functional way, without using any mutable variables.
+
+Comment regler le problème des mutable variables ?
+It is common practice to use some kind of transactional memory
+to protect the mutable variables from concurrent updates and race conditions
+
+== SOLID 
+
+The goal of the principles is the creation of mid-level software structures that:
+ • Tolerate change,
+ • Are easy to understand, and
+ • Are the basis of components that can be used in many software systems.
+
+Mid level ?
+The term “mid-level” refers to the fact that these principles are applied by
+programmers working at the module level. They are applied just above the
+level of the code and help to define the kinds of software structures used
+within modules and components.
+
+SOLID : 
+A function should do one, and only one, thing. We use that principle when we are refactoring large functions into smaller functions; we use it at the lowest levels. But it is not one of the SOLID principles—it is not the SRP.
+
+those users and stakeholders are the “reason to change” that the principle is talking about. Indeed, we can rephrase the principle to say this:
+
+A module should be responsible to one, and only one, user or stakeholder.
+
+Or très souvent c'est un group donc user or stakeholder will be replaced by actor :
+A module should be responsible to one, and only one, actor
+
+C'est quoi un module ? Ensemble cohésif de functions et de variables
+
+Violation du principe : 
+Class employee qui a 3 fct dont chaque actor est différent :
+calculatePay (accounting department), COO reporthours(human resources), save(DBAs)
+
+Une des solutions est : La façade
+
+OCP : the open closed Principle
+A software artifact should be open for extension but closed for modification
+In other words, the behavior of a software artifact ought to be extendible,
+without having to modify that artifact. 
+
+Comment reduire le nombre de code qui doit être changé ?
+ SRP et utiliser l'inversion de dépendance
+
+Processus de modélisation des composants :
+-Separer les responsabilités de chaque composants( calcul d'un report et sa presentation)
+-S'assurer que le changement d'une responsabilité n'occasionne pas le changement de l'autre, s'assurer de l'extension sans forcement une modification
+
+=> controller, couche de presentation, couche de bdn couche d'interactor
+=> nos dépendances pointent vers les modules, composants qu'on ne veut pas modifier, qu'on veut protéger des modifications
+=> If component A should be protected from changes in
+component B, then component B should depend on component A. 
+=> Les modules de plus haut niveau doivent être indépendant des plus bas, plus le module se rapproche de la business logic plus il doit être indépendant
+
+Architects separate functionality based on how, why, and when it changes, and then organize that separated functionality into a hierarchy of components.
+Il faut créer une structure en fonction de l'importance, les raisons de changement, qui peut changer avant l'autre etc
+
+Utilité des interfaces : 
+Inversion de dépendance
+Cacher les détails d'implémentations, empêcher les dépendances transitives :
+Une entité d'un software ne devrait pas dépendre de choses qu'elle n'utilise pas directement.
+
+The OCP is one of the driving forces behind the architecture of systems.
+The goal is to make the system easy to extend without incurring a high
+impact of change. This goal is accomplished by partitioning the system into
+components, and arranging those components into a dependency hierarchy
+that protects higher-level components from changes in lower-level
+components.
+
+LSP : liskov substitution principle
+ISP : Interface Segregation principle
+Différence entre langage static typé et dynamique comme java et Python
+
+langage statique :
+force programmers to create declarations
+that users must import, or use, or otherwise include.
+
+In dynamically typed languages like Ruby and Python, such declarations don’t
+exist in source code. Instead, they are inferred at runtime
+Retenir que :
+In general, it is harmful to depend on modules that contain more than you need.
+
+DIP : dependency inversion principle
+use, import,and include statements should refer only to source modules containing interfaces, abstract classes Nothing concrete should be depended on.
+
+It is the volatile concrete elements of our system that we want to avoid
+depending on.
+Mettre en place l'inversion de dépendance :
+Ne pas dépendre d'un code volatile qui peut changer mais plutôt d'interfaces, de classes abstraites qu'on va implémenter.
+-Ne pas override des fonctions concretes, ne pas mentionner quelque chose de volatile, qui n'est pas concret
+
+Comment savoir si un composant à été designer correctement ?
+Designer les composants de façons à ce qu'ils soient autonomes en terme de déploiement et de développement.
+
+Component cohesion ? Sur quoi repose cette notion ?
+Dans quelle composant appartient une classe donnée est une décision importante
+Common Closure Principle (CCP) says that a component should not have multiple reasons to change. C'est le SRP des composants
+
+Si le code dans une application doit changer, il faut que tout les changements se passe quasi dans le même endroit. On aura donc qu'à redeployer un seul composant
+The CCP prompts us to gather together in one place all the classes that are
+likely to change for the same reasons.
+
+SRP et CCP :
+The SRP tells us to separate methods into different classes, if they change for different reasons.
+The CCP tells us to separate classes into different components, if they change
+for different reasons.
+

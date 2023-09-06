@@ -1,0 +1,101 @@
+Les plus importants pour le moment :
+law of demeter, Command Query Separation, Composition over inheritance, KISS, DRY, YAGNI, Code for the maintener, minimise coupling, separations of concerns, Avoid Premature Optimization
+
+14-08-2023
+KISS : Keep it simple Stupid : garder le code le plus simple possible.
+
+YAGNI : You are not gonna need it : ne pas iplémenter quelque chose si on en aura pas besoin
+
+Do The Simplest Thing That Could Possibly Work 
+
+16-08-2023
+Separation Of Concerns : Separer le programme en plusieurs section
+Break program functionality into separate modules that overlap as little as
+possible.
+
+DRY : dont repeat yourself
+How
+Put business rules, long expressions, if statements, math formulas, metadata,
+etc. in only one place.
+Identify the single, definitive source of every piece of knowledge used in
+your system, and then use that source to generate applicable instances of that
+knowledge (code, documentation, tests, etc).
+
+Code for the maintainer : ecrire de telle sorte à ce que celui qui va lire le code comprenne ce que vous vouliez faire.
+
+17-08-2023===
+
+Avoid Premature Optimization : car ça perd le temps, c'est difficile à maintenir et il faut savoir distinguer ce qu'il faut optimiser de ce qui peut être laissser comme ça
+
+Minimise coupling : couplage faible car si A et B sont couplé le fait de changer l'un peut avoir un grand impact sur le programme et dans des endroits non suspectés.
+
+Law of demeter : dont talk to strangers :  !!!
+A method of an object may only call methods of:
+The object itself.
+An argument of the method.
+Any object created within the method.
+Any direct properties/fields of the object.
+
+It's a restriction for operating only on types that you directly have access to distils the knowledge and responsibility of every object.
+
+A single method can only operate on objects that are:
+
+passed as arguments to the method
+values of fields defined in this class
+
+Exemple ( ne pas enchainer les map encore et encore) plutot faire de petites fonctions
+
+Comment mettre en oeuvre :
+utilisé uniquement objet et parametre disponibles à l'intérieur des objets
+
+Reconnaitre une cassure ?
+- utilisation de instanceof à remplacer par une méthode
+
+=====
+
+Composition Over inheritance : 
+-less coupling
+-car inheritance break LSP
+Compose when there is a "has a" (or "uses a") relationship, inherit when "is
+a".
+
+Command Query Separation
+
+Orhtogonality : à demander
+
+Robustness : à demander
+
+Inversion of control : La modularité, le low couplage 
+Using Factory pattern
+Using Service Locator pattern
+Using Dependency Injection
+Using contextualized lookup
+Using Template Method pattern
+Using Strategy pattern
+
+SOLID
+O : improve maintenability
+    : write classe that can be extended not modified
+    : Expose only the moving parts that need to change, hide everythingelse.
+
+S : A class should never have more than one reason to change.
+
+Hide implementation details : A software module hides information (i.e. implementation details) by providing an interface, and not leak any unnecessary information.
+-interfaces
+-members data private
+-diminuer le couplage pour cacher encore plus de détails
+
+curly's law : une variable doit définir une chose et une seule et s'y tenir. Elle ne doit pas changer de rôle etc
+
+
+Encapsulate What Changes
+
+Interface Segregation Principle
+no code should be forced to depend on methods it does not use.
+splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
+
+BOY scout rule : Any time someone sees some code that isn't as clear as it should be, they should take the opportunity to fix it right there and then.
+
+! Command Query Separation : The Command Query Separation principle states that each method should be either a command that performs an action or a query that returns data
+Pourquoi :
+By clearly separating methods into queries and commands the programmer can code with additional confidence without knowing each method's implementation details.

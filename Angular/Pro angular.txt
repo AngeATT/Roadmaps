@@ -1,0 +1,39 @@
+270-283
+one way data binding [ ng…. ] = “expression” 
+
+directive :  Directives are defined as **classes that can add new behavior to the elements in the template or modify existing behavior ngClass, ngIf, ngSwitch…**
+
+property binding :  types of property binding :
+[property ] : C'est quoi une propriété ?
+[attr.name] : attribut binding
+[class.name] : class binding 
+[style.binding] :
+
+property et attribute binding : 
+Attributes provide additional information about elements exemple href de a, src de <img>
+les propriété 
+HTML attributes are defined in the HTML code, while HTML properties are accessed using JavaScript. HTML attributes are used to define the appearance of an HTML element, while HTML properties are used to define its internal functionality.
+
+String interpolation Binding ? [textContent]="'Name: ' + (model.getProduct(1)?.name ?? 'None')" Simplifié avec : 
+Name: {{ model.getProduct(1)?.name ?? 'None' }}
+
+Attribute binding: 
+There are some oddities in the HTML and DOM specifications that mean that not all HTML element attributes have equivalent properties in the DOM API.
+Exemple :  [attr.colspan]="model.getProducts().length"
+
+Class binding : Definition de toutes les classes
+[class] = "fct()" avec fct qui va renvoyer un ou des strings
+
+Ajouter des classes de manière optionnels :
+class="p-2"
+[class.bg-success]="(model.getProduct(2)?.price ?? 0) < 50"
+
+Utilité de ngClass ? Peut recevoir des strings, des array ou un objet ( map )
+
+Nullish operator Precedence Pitfall :
+The problem arises because the nullish operator has a lower precedence than the less than operator.
+return "p-2 " + (product?.price ?? 0 < 50 ? "bg-info" : "bg-warning"); c'est quoi son équivalent ?
+return "p-2 " + ((product?.price ?? (0 < 50)) ? "bg-info" : "bg-warning");
+. doit être écrit :
+return "p-2 " + ((product?.price ?? 0) < 50 ? "bg-info" : "bg-warning");
+

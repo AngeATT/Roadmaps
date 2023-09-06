@@ -1,0 +1,6 @@
+==========Navigation :
+All the navigation features in a Flutter app are provided by the Navigator class.
+Navigator offers tools for changing the stack by pushing to it or popping from it.
+Static navigation : ROute
+Dynamic Navigation with onGeneratedRoute
+

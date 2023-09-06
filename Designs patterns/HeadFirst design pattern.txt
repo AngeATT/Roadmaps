@@ -1,0 +1,44 @@
+Problème de l'héritage et utilisation de la composition pour y pallier
+Design Principle : 
+Identify the aspects of your application that vary and separate them from what stays the same
+
+-Séparer les elements susceptible de changer frequemment de notre classe 
+
+Design Principle
+Program to an interface, not an implementation.
+
+59 : Pour ajouter un comportement à notre objet, au lieu d'implémenter directement le comportement de cet ojet dans la classe sachant qu'il peut varier, on va créer une interfaces, des objets qui vont hériter de cette interface, déclarer une variable de cette interface et l'injecter dans notre objet afin de pouvoir changer son comportement en runtime et dynamiquement et changer cela rapidement dans le futur
+
+Design principle 3 :
+Favor composition over inheritance ( HAS-A can be better than IS-A )
+Has-A : Each Duck HAS A flyBehaviour
+
+OO principles :
+Encapsulate what varies.
+Favor composition over
+inheritance.
+Program to interfaces, not
+implementations.
+Strive for loosely coupled
+designs between objects that
+interact.
+
+The Strategy Pattern defines a family of algorithms,
+encapsulates each one, and makes them interchangeable.
+Strategy lets the algorithm vary independently from
+clients that use it.
+
+Quand utilisé ?
+Lorsque on veut attribuer un comportement spécifque à des objets et ce comportement peut varier à tout moment, ce comportement aussi est une sorte d'algorithme qui change
+
+Publishers + Subscribers = Observer Pattern
+Un sujet fait part à ses observers qu'il a changé
+
+Question à se poser lorsqu'on design : is this an area
+of the application that might change in the future? If it did change, would the change be well
+encapsulated, or would it require changes in many parts of the code?
+
+Decorator pattern
+Factory Pattern :
+Pourquoi : les classes d'implémentations peuvent changer un jour ( rappel toi de la classe qui transporte, partout tu vas instancier le transport, et si il change ?s )
+Déterminer le type approprié à instancier dans un vaste ensemble de choix

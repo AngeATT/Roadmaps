@@ -1,0 +1,28 @@
+26/07/2023 
+
+Terminology : premiere lecture
+Architecture :
+Pourquoi utilisé Spring ??
+
+Spring Core :
+Configuration : ok
+Dependency injection : ok
+Spring IOC : ok
+Spring AOP : première lecture
+Spring MVC : mid
+ANnotations : ok
+Spring Bean Scope : ok
+
+Spring Security : première lecture, revoir l'architecture de securité 
+Authentification : première lecture
+Authorization : premire lecture 
+Oauth2 : premiere utilisation mais à refaire
+Jwt : utilisé une fois mais à refaire en mémorisant l'architecture, le concept
+
+SPring Boot Starters : ok
+AutoConfiguration : ok
+Actuators ??
+
+26/07/2023
+Première lecture terminology
+

@@ -1,0 +1,7 @@
+81
+Définir l'enveloppe : Container, BoxConstraints etc
+puis ce qui y sera
+Image : BoxConstraints
+Positionner des elemets : Positioned
+
+Card résidence :

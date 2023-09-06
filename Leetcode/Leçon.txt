@@ -1,0 +1,71 @@
+https://leetcode.com/problems/3sum/ : l'importance de trier les éléments avant de parcourir 
+
+Greedy algorithm pour trouver une solution locale
+
+2 pointeurs : faire une fenetre dans un ensemble puis decaler au fur et à mesure
+
+ Refaire ça https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/description/?envType=study-plan-v2&envId=leetcode-75
+
+Backtracking :
+On veut énumerer toutes les solutions possibles par éliminations, greedy et dynamic programming ne sont pas possible
+
+conversion de XOF vers EUR
+
+coursdevise enregistre les cours 
+tenir compte du jour 
+
+cours de cotation par jour
+chaque jour convertible vers Y
+
+le 5 on enregistre pour le xof les cours qu'on a 
+le 6 on enregistre les conversion en dollar ou euro
+convertir en fonciton de la date
+si elle existe faire la conversion en fonction du jour et pour chaque jour une valeur de conversion
+commande , devise, montant devise et deviseà convertir 
+
+//verifier si les devises existent
+//recuperer la valeur de la conversion d'une devise A vers la devise B
+//renvoyer la multiplication par le montant
+
+La devise vers laquelle existe dans notre systeme obligatoirement ? 
+on recupere par sigle ou par id ?
+Vu qu'il existe déjà les valeur de cotation qui réprésentent le taux de change d'une devise dans une autre est ce qu'on est obligé d'utilisé une api externe ?
+
+Notre application se charge d'enregistré chaque jours les valeurs de cotations ? et si les enregistrements sont perdus avec la bd ?
+
+Dans ce cas peut être utiliser une api externe vaut mieux
+Mais dans ce cas pourquoi vérifier si la devise existe dans notre système ?
+
+La valeur de retour de la valeur en string et en double ? pk ?
+
+Je recupere la valeur de cotation via une api externe pour un jour donnée ou les valeurs de cotations sont enregistrés par le système chaque jour ?
+
+Prendre le sigle
+renvoyer dans une vm
+
+parcourir chaque element
+prendre un element calculer son xor
+avancer calculer xor de ce dernier
+voir si on peut reculer de un calculer xor des 2
+voir si on peut encore reculer calculer xor des 2 et 1
+augmenter calculer xor des 3 
+voir si on peut calculer pour les 3 et pour un dernier
+
+
+recursion ou on ajoute à notre liste un element puis on calcul pour tous les elements derrieres un à un
+un indice ou commencer à revenir en arriere
+une ocndition pour sortir
+resultat du xor et un indice ?
+
+pour chaque element du tableau
+on va caluler lui même son xor
+le xor de lui et un element après lui
+
+le xor est calculé comme suit :
+une valeur de base XOR un element un element
+
+ce qui va varier c'est l'indice de depart
+on prend le temp et on recalcul son xor
+
+prendre le premier calculer son XOR
+ajouter au total 

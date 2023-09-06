@@ -1,0 +1,8 @@
+Objectif : reliable, scalable, and maintainable data systems
+
+06-08
+bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.
+
+When
+building an application, we still need to figure out which tools and which approaches
+are the most appropriate for the task at hand.

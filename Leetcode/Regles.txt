@@ -1,0 +1,3 @@
+-20 leetcodes par sections ou jusqu'a ce qu'on puisse avoir le click
+
+-45 mins max par leetcode, apprendre le declcikc, la méthodologie puis refaire ça 3j après
