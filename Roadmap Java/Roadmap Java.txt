@@ -30,4 +30,100 @@ le rôle de new, le fait qu'il alloue une certaine quantité de mémoire
 - you can do whatever you want in the setter
 method, whereas you can’t do anything if your instance variables are public.
 -pourquoi il existe des setters qui ne vérifient rien ? parceque après on peut changer d'avis sans pour autant remettre en cause tout le code
+-Instances variables ont toujours une valeur par defaut 
+-Local variables n'ont pas toujours de valeurs par defaut
+-comparaison de 2 primitives avec == 
+-savoir si deux objets se referrent à la même instance dnas la heap avec ==
+-comparaisons de l'équivalence objets avec equals
+-lecture de la doc 
+-acces-level control inheritance :
+public sont hérités
+private ne le sont pas
+-Utiliser l'heritage lorsque la relation IS-A existe bel et bien, pas pour forcement reutiliser du code
+-Le polymorphisme permet d'avoir le type de reference et le type de l'objet différent
+-Avec le polymorphisme le type de reference peut être une superclasse de l'objet déclarer 
+Pourquoi ? faire des tableaux polymorphiques, polymorphics arguments
+-L'intérêt du polymorphisme c'est de pouvoir introduire de nouvelles classes sans pour autant changer notre code qui existe
+-les 3 cas pour lesquelles on ne peut pas étendre une classe : non publique, contructeur privé, classe final, inner class
 
+-Pourquoi faire d'une classe une classe final ? Pour empêcher l'éhritage et garantir le fonctionnement ouhaité des méthodes qui s'y trouvent
+-Différence entre type référence et le type de l'objet
+-Utilité des classe abstraite est de fournir un contrat tout en n'étant pas instantiable
+-abstract method lorsque la définition d'une méthode est trop généraliste ( eat() for animals ?
+-toute classe qui n'étend pas une autre étend la classe object
+-méthods de la classe object : equals, hashcode, getclass ..
+
+-Heap et stack :
+Au demarrage java s'alloue de la memoire via la jvm de la part de l'OS
+-objets vivent dans la heap, les invocations de méthodes vivent dans la stack
+-locals variables dans la stack, on les appel stack variables
+-appeler une méthode la fait passer en premier dans la call stack
+-Dans la call stacks il y a les stack frames qui contiennent les méthodes, l'état de la méthode, la ligne qui s'execute et les variables locals
+-on execute une méthode jusqu'à ce quelle finisse ( on arrive au })
+-en résumé on ajoute les méthodes au top de la stack, si elle appelle une autre méthode on met l'autre méthode on l'execute jusqu'à ce quelle finisse et on appelle la méthode initiale
+-On a un constructeur par defaut uniquement si on a 0 constructeurs dans la classe
+-Constructeur permet d'initialiser l'état d'un objet
+-Chaque objet garde en son sein les instances de ses variables, ses méthodes et pour sa super classe
+-this fait reference à l'objet courrant
+-Un constructeur peut faire appel qu'à this ou super pas les deux
+-La vie d'un objet dépend uniquement des variables qui s'y referrent, qui y font reference
+-Différence entre la durée de vie d'une variable locale et d'une variable d'instance :
+La variable locale vie uniquement lorsque la méthode est dans la stack frame, la variable d'instance vit pendant toute la durée de vie de l'objet
+-An object’s life has novalue, no meaning, nopoint, unless somebody has a reference to it.
+
+15-09 Méthode static à travers Math
+-Signification de static : une méthode qui fonctionne sans une instance de classe.
+-Appel d'une méthode non static : reference ( telecommande ), static : nom de la classe.
+-Une méthode static ne peut pas appeler une méthode non static de la même classe qui utilise une variable d'instance
+-Mais il vaut mieux éviter cela car dans l'avenir il est possible qu'on override ou on revoit l'implémentatoin de notre méthode.
+-On peut appeler une méthode static à partir d'une instance de variable mais cela ne lui donne aucune information sur l'objet. Exemple : 
+Duck d = new Duck();
+d.main(new String[]{})
+-static variable : copie unique d'une variable pour toutes les instances
+-les variables static sont initialisés avant que n'importe quel objet de la classe le soit
+-Static variables are initialized before any static methods
+-Une variable marquée final signifie qu'une fois celle ci initialisée elle ne peut plus changer
+-il y ce qu'on appelle un static initializer :
+static { } dans lequel on peut initialiser des variables et qui sera bien avant la création des variables static et des instances static
+Q: ordre de création : variable, méthode static, static initializer ?C'est quoi un static initializer ? A quoi sert une variable static ? un exemple ? A quoi sert une méthode static ? 
+-Utilisation de final :
+variable final : on ne put pas changer après initialisation
+variable final dans methode : void (final int x) on ne peut pas changer x dans la méthode
+méthode final : on ne peut pas l'override
+classe final : on ne peut pas l'étendre
+Q: final ? une variable, une méthode et un classe ? son utilité ?
+pourquoi au juste faire une class final ? class final et méthodes finals ?
+Q : diff entre float et double ? cmt préciser qu'on assigne float ?
+Quelques fct de Math :
+abs, random, round, min, max, sqrt, 
+-Wrapping et autobox 
+wrapping : transformer les primitive en objet en les wrappant pour les appeler la ou on attend des objets ( ex ArrayList<???>)
+-Autoboxing se fait automatiquement depuis java 5  on peut faire int num = list.get(0) au lieu de list.get(0).intValue();
+-Pourquoi on ne peut pas faire ArrayList<int> ? car les types generiques, on ne peut spécifier que des classes ou des interfaces.
+-Que produit ce code comme résultat ?
+-On peut traduire de string vers primitif avec les wrappers
+-Le seul operateur overloaded est le + comme concatenation de string
+- Tout ce qu'on ajoute à un string est stringified (rendu en string) "" + 45.5
+-On peut utiliser aussi Double.toString(..), String.valueOf(..)
+
+public class TestBox {
+ private Integer i;
+ private int j;
+ public static void main(String[] args) {
+ TestBox t = new TestBox();
+ t.go();
+ }
+ public void go() {
+ j = i;
+ System.out.println(j);
+ System.out.println(i);
+ }
+}
+
+
+1 ok
+2 nn
+3 nn
+4 ok
+5 nn pas initialisé
+6 ok

@@ -1,0 +1,14 @@
+audience
+correct framework
+architectures
+good looking projects
+bootstrap template
+database is needed
+login page auth,authorization admin user roles
+security 
+solves business pb
+bug tracker/ issue tracker
+projet basé sur le nom de l'entreprise : build quelques choses qu'ils utilisent chaque j
+build Saas
+dedicate a couple hours to do a part of the project
+track our progress/ deadline / why we didnt did it in time / détailler chaque truc / use our bug tracker to track the progress 

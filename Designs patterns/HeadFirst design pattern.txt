@@ -42,3 +42,10 @@ Decorator pattern
 Factory Pattern :
 Pourquoi : les classes d'implémentations peuvent changer un jour ( rappel toi de la classe qui transporte, partout tu vas instancier le transport, et si il change ?s )
 Déterminer le type approprié à instancier dans un vaste ensemble de choix
+Quand tu veux créer des objets de différents types utilise le factory
+
+Avanatages :
+So, by encapsulating the pizza creating in one class, we now have
+only one place to make modifications when the implementation
+changes. remove the concrete
+instantiations from our client code
