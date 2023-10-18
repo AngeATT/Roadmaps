@@ -120,10 +120,156 @@ public class TestBox {
  }
 }
 
+-Formating string : on utilise %,type pour mettre un argument en plein string
+%d, %f, %x : pour hexadecimal, %c : transforme en caracter
+le format est : 
+%[argument number][flags][width][.precision]type ex :
+%,.2f : remplacé . par virgule et 2 nombres après la virgule
+-Lorsqu'on construit un objet enfant d'un autre objet on crée aussi 
+-Ordre constructor vient avant static initializer ? the static
+blocks for both classes run before either of the constructors run
 
-1 ok
-2 nn
-3 nn
-4 ok
-5 nn pas initialisé
-6 ok
+DataStructure :
+-Comparaison des Collections : la classe doit implementer comparable et la méthode compareTo
+A Comparable element in a list can compare itself to another of its own type in only one way, using its compareTo() method
+-Un comparator est exterieur à l'élément, il n'est pas utilisé par un element pour se comparer à un autre, c'est l'élément utilisé par Collections.sort() ou List.sort(), sort() utilise la méthode compare du comparator
+-Expressions lambda : remplacer les classes qui implements une interface qui dispose d'une seule méthode ( interface fonctionnelle ) de sorte à envoyer la méthode directement en paramètre
+!!!If an interface has only one method that needs to be implemented, that
+interface can be implemented as a lambda expression.
+
+-Set, List et Map 384
+-Map n'étends pas collection
+-Collections => Set et List Set éléments uniques
+-Comment les Set font pour déterminer l'égalité entre 2 objets ?
+égalité de référence et égalités des objets
+comportement par defaut de hashCode() => donner un nombre unique, donc on doit le override pour s'assurer qu'on aura le même pour deux objects identiques
+De même redefinir equals pour s'assurer qu'on aura 2 objets identiques
+Donc HashSet vérifie d'abord le hashCode si les 2 sont égaux il vérifie ensuite avec equals
+
+-TreeSet : permet de maintenir un ordre dans les éléments grâce au fait que l'élément implements comparable, maintient l'ordre des éléments
+
+-Map : ne fait pas partie de Collection, .. on connait map
+
+-Convenience Factory methods :
+Permet de créer des collections déjà remplie mais ne nous donne pas une vraie implémentation
+Set.of(), List.of(), Map.of(), Map.ofEntries(Map.entry("",""))
+
+-Polymorphisme et types génériques :
+on a takeAnimals(List<Animals> animals){} pouvons nous lui passer une List<Dog> ? Non parceque la ou on attend des animaux, si on passe que des dogs, normalement on veut que des dogs, si on passe après des chats qui devrait normalement passé ne passera plus.
+
+pour pouvoir permettre d'utiliser aussi bien une liste de chats que de dogs on doit utiliser : 
+List<? extends Animal> avec le extends qui signifie extends ou implements
+on ne peut pas ajouter cette list car on peut modifier s
+
+Différence d'utilisation entre ? extends et Type T extends Animals ?
+On utilise le T quand on en aura besoin encore c'est à dire, si on veut par exemple l'utiliser comme type de retour, alors que le ? permet juste de dire peut importe 
+
+
+====Lambdas et streams
+for loops : for (Elem e : elems) =>
+
+21-09-23
+===Commons operations : 
+filter, skip, limit, distinct, sorted, map, dropwhile, takewhile
+
+-Stream sont réprésentés par des adresses mémoires comme tout objet, mais ils ne contiennent pas les éléments, ils contiennent les opérations à effectués pour avoir notre stream voulu, rien ne se passe sur un stream tant qu'on a pas appelé les opérations terminales : 
+anyMatch
+count()
+collect
+findFirst
+
+Collecter le resultat des streams : Collectors.
+-Chaque opérations intermédiaire retourne un stream donc on peut les stacker ensemble
+-Streams are lazy => chaque opération decrit ce qu'il faut faire mais ne le fait pas jusqu'à ce que une opération terminale soit appelé afin d'optimisé les requêtes et ne pas à effectuer des opérations à chaque fois sur la collection
+
+règles du stream :
+-Un stream ne se consomme qu'une seule fois
+-on a forcement besoin de l'opérations de depart
+-On ne peut pas et ne devrait pas modifier la collection utilisée par le stream
+-Un stream ne change pas la collection de départ
+
+==Lambdas expressions
+Exemple de on veut => forEach(System.out.println(item))
+mais d'ou sort le item ? d'ou vient t'il ? c'est pour ça qu'on écrit item -> System.out.println(item)
+-lambda expressions sont des objets
+-une expression lambda implémente une interface fonctionnelle
+-donc une expression lambda implémente une interface fonctionnelle
+
+Lambda expressions are objects, and you run them by calling their Single Abstract Method
+C'est une fonction anonyme qui permet de remplacer une SAM, interface fonctionnelle
+-Dans le code ancien, les annotations n'existaient pas mais on reconnait une lambda lorsqu'elle à une seule méthode abstraite SAM (single abstract méthode) ( elle peut avoir d'autre méthodes qui disposent d'un corps mais une seule abstraite, static, boolean, méthodes qui viennent de objet ne comptent pas )
+ types de méthodes abstraite : 
+Consumer<T> : void accept(T t)
+Supplier<T> : T get()
+Predicate : boolean test(T t);
+function<T,R> : R apply(T t); Take something ofone type and return something of a different type
+
+Méthode reference : permet de : point the compiler to a method that does the operation we want 
+Exple : Song::getGenre;
+A method reference—instead of usinga “.” that would cause the compiler to call the method, use a “::” to point the compiler in the direction of the method.
+Qu'est ce qu'une méthode reference et à quoi elle sert ?
+
+-Les collectors :
+Collectors.toList : list modifiable
+COllectors.toUnmodifiableList pareille set, map et joining pour les assembler et les separer en utilisant un delimiter
+
+boolean anyMatch(Predicate p);
+boolean allMatch(Predicate p);
+boolean noneMatch(Predicate p);
+Optional<T> findAny();
+Optional<T> findFirst();
+Optional<T> max(Comparator c);
+Optional<T> min(Comparator c);
+Optional<T> reduce(BinaryOperator a);
+long count();
+
+459 Exceptions
+Exceptions : permet de gérer les erreurs qui peuvent subvenir dans le déroulement.
+Java’s exception-handling mechanism is a clean, well-lighted way to handle “exceptional situations” that pop up at RUNTIME
+-On reconnait ces méthodes à throws dans leurs signature
+-Elle déclarer le problème, l'exception possible qu'elle va lancer dans la signature de sa méthode.
+-Checked et unchecked exceptions
+-exceptions polymorphiques
+-préciser les exceptions qui peuvent survenir ce sont les checked exceptions (throws ), gérer obligatoirement ces exceptions
+-Quand on utilise la classe mère exception, on ne peut pas mener des actions précises il vaut mieux, utiliser des exceptions bien spécifiques, pour écrire un bon code
+-On organise les exceptions du plus petit au plus grand, de telle sorte 
+-When a method throws an exception, that method
+is popped off the stack immediately, and the
+exception is thrown to the next method down the
+stack
+-Si on ne veut pas gerer une exception on peut juste la throws à la méthode suivante, mais dans tous les cas il faut que quelqu'un gère l'exception dans le code sinon si elle se leve la jvm va simplement s'arrêter
+
+==> Point clés 
+-checked et uncheck exceptions
+-heritage des exceptions
+-ordre convenable des exceptions
+-SIgnification du throws
+-handle or declare it
+-comportement si tout le monde throws l'exception
+-A try with only a finally (no catch)
+must still declare the exception.
+
+
+=> Inner class 
+An inner class can use all the methods and variables of the
+outer class, even the private ones.
+Importance des inner class :
+implement the same interface more than once in a class. 
+Utilité lorsqu'une classe veut étendre une autre ou avoir un certain comportement pour se faire passer pour une autre 
+exple : 
+Dog qui peut avoir une innverCLass qui etend Bouton pour l'utiliser
+
+577
+
+Save state :
+Sauvegarder l'état deux conditions :
+Données seront utilisés uniquement par des programmes java : serialisation
+Sinon : plain texte file
+file avec des delimiters que d'autres programmes peuvent parser
+la serialisation se fait par arbre tout objet qui implements serializable, on va sauvegarder tous les objets de ses instances
+si on veut pas sauvegarder une variable on le marque transient
+On ne peut pas sauvegarder networks, des connexions, des threads
+Ne sauvegarde pas deux objets égaux
+
+===Writing serialized objects====
+-The Java I/O API has connection streams, which represent connections to destinations and sources such as files or network sockets, and chain streams that work only if chained to other streams. 

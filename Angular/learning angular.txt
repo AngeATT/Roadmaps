@@ -1,0 +1,5 @@
+Enums
+-créer 10 enums en java et en typescript
+-on peut assigner des valeurs aux constantes
+-Accéder au positions comme dans un tableau
+-Différence entre fonctions fléchées et foncitons normales ?

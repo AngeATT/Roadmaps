@@ -1,1 +1,10 @@
 string interpolation : {{}}
+attribute binding : [src} = "..."
+ngOninit(){}
+event binding : (click) = fct
+Pour lier une méthode à un événement d'un élément du template, mettez l'événement entre parenthèses  ()  et passez la méthode en argument
+-constructor, portée des constructor
+-Utilisation de @Input
+-une directive est une classe qui vient ajouter du comportement à l'élément sur lequel elle est posée
+-* nous dit que c'est une directive structurelle
+-*ngIf et *ngFor ; elems of Elem

@@ -1,7 +1,13 @@
-81
-Définir l'enveloppe : Container, BoxConstraints etc
-puis ce qui y sera
-Image : BoxConstraints
-Positionner des elemets : Positioned
+On bouai tout, on va faire du no code avec flutter flow et batire bcp d'applications :
+https://app.flutterflow.io/project/ivoire-resi-i03vd3?tab=uiBuilder&page=HomePage
 
-Card résidence :
+Pages :
+page d'acceuille : homePage 
+page de recherche très simplifié
+page de connexion de l'utilisateur => definir l'utilisateur
+Recherche avec algolia
+app pour créer une residence et la poster : fournir des api pour notre premiere app
+base de donnée : firebase
+Page de favoris
+Page de messages
+page de détails sur la résidence 

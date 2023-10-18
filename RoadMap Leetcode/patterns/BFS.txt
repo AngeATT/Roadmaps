@@ -1,0 +1,5 @@
+Diviser le problème en sous problème et appel recursif
+trouver la condition qui permet de ne pas revenir sur la case precedente 
+
+Monotonic stack :
+on doit garder en mémoire des indices ordonner 

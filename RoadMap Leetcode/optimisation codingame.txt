@@ -1,0 +1,38 @@
+1 ligne
+gerer son deplacement
+30 zones
+se deplacer g ou d passe d'une zone en utilisant < ou >
+zones forment une boucle
+chaque zone rune, peut modifier rune
+rune = A-Z ou " "
+pierres = " " a la base
+modification rune avec + ou -  A-Z " " A
+activer rune avec ., ajoute cette lettre à la phrase qu'il épèle,
+peut activer une rune pluseurs fois
+
+victoire = on veut la bonne phrase
+blub ft pus de 400acitions
+instructions incorrectes
+
+algo : 
+on doit ecrire la phrase
+notre action sera de déterminé si il vaut mieux changer notre rune actuelle ou changer de zone 
+
+changer de zone = > puis on part de A à Z
+donc changer de zone n'a d'interet que si on veut passer > puis + : 0-12 c'est worth 
+intervale entre [0-12]
+
+verifier si revenir sur une zone n'est pas mieux que de changer la lettre sur la tablette actuelle ?
+hashMap => on va utiliser un tableau
+
+mettre les lettres qui se repetent le plus ?
+
+calcul à faire :
+est ce que ça vaut le coup de modifier notre tablette ? calculer le nbre d'occurence restant ?
+on se trouve actu sur quelle tablette ?
+faire bouger < et > avec le tableau 
+
+est ce que se deplacer vers cette zone ocute cher ?
+oui / non
+vers quelle zone se deplacer coutera moins cher
+creer une nouvelle zone 
