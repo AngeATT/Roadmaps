@@ -80,6 +80,9 @@ utiliser {this.props.param}
 -Statefull component : maintain its own internal state
 -good practice : minimize statefull state and maximize stateless 
 
+=>Pass a Callback as Props
+You can also pass handler functions or any method that's defined on a React component to a child component.
+
 Statefull component :
 -respond to state changes and present an updated UI when necessary
 -have access to the state object throughout the life of your component
@@ -105,3 +108,23 @@ bind this in the constructor so this becomes bound to the class methods when the
 =>Use state to toggle an element
 -you can't rely on the previous value of this.state or this.props when calculating the next value because React batch the multiple setState() to improve the performance of the application
 -Il faut passer à setState une fonction qui permet d'avoir acces au state et au props, une fonciton guaranti d'utiliser la version la plus récente
+
+=> ControlledInput
+les input et text area maintiennent leurs propre état dans le dom
+Pour manager leur états avec react il faut les ajout dans le state
+
+=>Pass State as props to CHild Components
+Great pattern is : Un composant parent contient le gros de l'information puis il va passer à ses enfants les informations dont ils ont besoin
+
+Patterns important :
+
+1-The child components only receive the state data they need. The second is that complex stateful apps can be broken down into just a few, or maybe a single, stateful component. The rest of your components simply receive state from the parent as props, and render a UI from that state.
+
+=>Pass a Callback as Props
+Pour faire communiquer un parent et un enfant, l'enfant execute une onction du parent qui va mettre à jour des variables du parents directement
+
+=>Lifecycle Method
+Perform actions at specific points in the lifecycle of a component
+main méthods :
+componentWillMount() componentDidMount() shouldComponentUpdate() componentDidUpdate() componentWillUnmount()
+

@@ -1,0 +1,24 @@
+=>Pourquoi utiliser let au lieu de var ?
+var override les variables sans lever d'exception, var name = 10;
+var name = 5; ne va pas poser de porblème
+
+=>Les String sont des tableaux en js mais on ne peut pas les modifier
+
+=> tableaux peuvent contenir des tomates et des oignons
+
+=> comment ajouter à la fin d'un tableau ?
+on utilise push(valeur)
+
+=>Comment retirer le dernier element et l'assigner ?
+.pop()
+
+=> Comment supprimer le premier et retourner l'élément ?
+.shift()
+
+=>Comment ajouter un element au debut du tableau ?
+.unshift()
+
+=>Comment créer une fonction ?
+-function maFonction(){}
+
+Global Scope And Functions 

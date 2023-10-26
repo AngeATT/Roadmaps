@@ -1,0 +1,173 @@
+=>Pourquoi utiliser let au lieu de var ?
+var override les variables sans lever d'exception, var name = 10;
+var name = 5; ne va pas poser de porblème
+
+=>Les String sont des tableaux en js mais on ne peut pas les modifier
+
+=> tableaux peuvent contenir des tomates et des oignons
+
+=> comment ajouter à la fin d'un tableau ?
+on utilise push(valeur)
+
+=>Comment retirer le dernier element et l'assigner ?
+.pop()
+
+=> Comment supprimer le premier et retourner l'élément ?
+.shift()
+
+=>Comment ajouter un element au debut du tableau ?
+.unshift()
+
+=>Comment créer une fonction ?
+-function maFonction(){}
+
+Global Scope And Functions 
+
+=> Compatator : with == 
+equality operator, which attempts to convert both values being compared to a common type
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
+
+The strict equality operator does not perform a type conversion.
+
+-Les objets : comment creer ajouter, supprimer modifier ?
+*creer un objet : 
+myObj = {
+"propriete" : "valeur"
+}
+* comment ajouter une propriete ? :
+myObj.prop = "valeur"
+
+*Comment supprimer une propriete ?
+delete obj.prop
+
+*Comment modifier une propriété ?: 
+obj.prop = nouvelle valeur
+
+Utilite des objets ? 
+On peut utiliser un objet lorsqu'on veut faire un check sur des valeurs qu'on connait tous
+
+2 manières d'accéder au propriétés ?
+obj.prop
+obj[prop]
+
+-Les propriétes sont tjr convertis en string :
+obj.hasOwnProperty(prop)
+
+-Accéder aux propriétés d'un objet :
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  }}
+on va faire recordCollection[id][propriete]
+-Toujours accéder aux variables avec myObj[prop]
+
+-The definitive guide :
+expression ? compute the value doesnt do anything
+statement ? dont have a value but alter the programm state
+Pourquoi utiliser des arrows functions ? Arrow functions are most commonly used when you want to pass an unnamed function as an argument to another function.
+
+-Différence entre méthode et fonction ?
+lorsqu'une fonction est liée à un objet c'est une méthode
+
+-Afficher des caractères comme émoji et accent :
+*decrire directement avec une variable let café ou \u :
+caf\u{E9} (ES6) 
+
+-Quel est le soucis avec les variables qui ont des non ASCII ?
+*Les caractere non ASCII peuvent avoir différentes interpretations donc deux varibales peuvent avoir la même sémantique mais être "différentes" ne renvoient pas les même valeurs
+const café = 1; // This constant is named "caf\u{e9}"
+const café = 2; // This constant is different: "cafe\u{301}"
+café // => 1: this constant has one value
+café // => 2: this indistinguishable constant has a different value
+
+-Numbers :
+integer : 1, 10
+hexadecimal : 0xff, 0Xabf
+binary : 0b0100
+octal : 0o1247
+
+-Floating points : 
+.58 signifie 0.58
+6.02e23 // 6.02 × 10²³
+1.4738223E-32 // 1.4738223 × 10⁻³²
+
+Standardiser : let billion = 1_000_000_000;
+
+Arithmetiques :
+*puissance : Math.pow()
+*arrondi au plus pret : Math.round
+*arrondi au plus grand : ceil
+*arrondi au plus bas : floor
+*absolu : Math.abs
+*max, min, peuvent prendre 3 champs
+*nombre aléatoire entre 0 et 1 : Math.random()
+*PI : Math.PI
+*racine carré : sqrt()
+*Puissance : Math.pow(3,2)
+sin, log 
+
+ES6 :
+*racine carré de la somme au carré des elements : Math.hypot(x,y,z)
+Log10
+log2
+*Le signe d'un élément : 
+Math.sign(x) -1 0 ou 1
+*Supprimer la partie fractionnelle : 
+Math.trunc
+
+Les erreurs sur les nombres en js :
+Il n'y a pas dérreurs mais on aura soit NaN, soit des Infinity - et + selon la logique mathématique
+Number.POSITIVE_INFINITY ou Number.NEGATIVE_INFINITY
+
+*Convertir en Int :
+Number.pareseInt(x)
+
+*Convertir en Float :
+Number.parseFloat(y)
+
+vérifier que c'est un integer :
+Number.isInteger()
+
+-Comment déterminer si une valeur est NaN ?
+Math.isNan(x) toute autre opération est fortuite
+
+-Différence entre 0 et -0 1/0 et 1/-0 sont différents
+
+-Problème avec les nombres à virgules 0.3-0.2 ne donne pas 0.1 mais 0.099999998
+
+-BigInt : 10000n 64digits : 2 choses à retenir dessus ?
+
+*Impossible de mélanger les operations avec le BigInt et les autres car il se comporte comme un int donc difficile de rendre un resultat correcte
+
+*Les comparaisons par contre passent
+
+Dates and times :
+*timestamp that specifies the number of elapsed milli‐seconds since January 1, 1970
+*Obtenir la date de maintenant en String : now.ISOString(),
+en timeStamp : Date().now() ou getTime()
+
+Différence entre Date et Date() ? objet et l'autre non, getTime() l'autre now()
+
+-Text :
+*Chaque caractère ocupe ? 
+	chaque caractère : 16bits
+*Certains caractère depasse t'il 16 ?
+si un caractère depasse16 on associe 2 de 16bits, le length sera 2 mais c'est un seul caractère
+*Comment écrire sur plusieurs lignes ?
+Ecrire sur plusieurs lignes avec \ et revenir à la ligne
+"lkesklfnlke\
+rjerkjre" va nous donner une seule ligne
+*Comment utiliser un caractère comme ' ? avec le \
+*Comment faire un backspace ? \b
+*Comment faire une tabulation ? \t
+*Comment faire une newline ? \n
+*Tabulation vertical ? \v
+*Retour à la ligne sans nouvelle ligne ? \r
+
+String in js api :
+js p53

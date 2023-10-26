@@ -1,0 +1,22 @@
+-Ability to get computers to learn without being explicitly programmed
+-Applications of machine learning 
+-AGI
+-Machine learning qui apprend d'elle même
+-Supervised learning : 
+entrainer le model avec x -> on a y avec un nombre important de data avec des labels
+-le questionner sur une donnée non prédéfinie, qu'il n'a jamais vu pour savoir sa réponse
+
+
+regression : infiniteresults from the machine
+classification : only a set of possible result whom are called category  
+
+Unsupervised learning :
+no labels, trying to figure out a pattern, not trying to supervise, not giving an algorithm, we want to have groups of things
+clusters : the algorithm assign data to groups whom are called clusters
+clustering algo exple : grouping articles on
+Exple 1 : google news via le titre
+exple 2 : put some customers on categories and understand their motivation
+
+anomaly detection : ce qui ne va pas
+
+dimensionality reduction

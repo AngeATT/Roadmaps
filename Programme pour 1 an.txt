@@ -1,0 +1,37 @@
+300 algos java
+300 algos js
+300 algos python
+Spring Boot : lire le livre sur jpa, lire le livre sur les bases de données 
+codingame : faire un codingame chaque weekend
+LeetCode : faire un leetcode chaque jour en suivant la roadmap du site
+React : 1h le soir 
+Algos 1h le soir
+AI : 1H le soir
+Suivre cours de coursera sur le backend quand on aura le djai
+Websocket
+Threads
+Faire un Oauth2 pour angular avec mon jumia deals projets la
+JWT et owasp
+C'est tout on s'en fou du reste
+Projets : Un blog en react, un site pour upwork version ivoire, des projets sur flutterflow 
+
+
+Une base très forte sur ces 3 langages pour l'année à venir
+Une base très forte en base de donnée
+Une base très trsè bonne Spring Boot
+
+audience
+correct framework
+architectures
+good looking projects
+bootstrap template
+database is needed
+login page auth,authorization admin user roles
+security 
+solves business pb
+bug tracker/ issue tracker
+projet basé sur le nom de l'entreprise : build quelques choses qu'ils utilisent chaque j
+build Saas
+dedicate a couple hours to do a part of the project
+track our progress/ deadline / why we didnt did it in time / détailler chaque truc / use our bug tracker to track the progress 
+
