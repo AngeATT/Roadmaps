@@ -1,3 +1,5 @@
+2h par jour
+
 =>Pourquoi utiliser let au lieu de var ?
 var override les variables sans lever d'exception, var name = 10;
 var name = 5; ne va pas poser de porblème
@@ -23,7 +25,7 @@ on utilise push(valeur)
 
 Global Scope And Functions 
 
-=> Compatator : with == 
+=> Comparator : with == 
 equality operator, which attempts to convert both values being compared to a common type
 1   ==  1  // true
 1   ==  2  // false
@@ -67,8 +69,6 @@ on va faire recordCollection[id][propriete]
 -Toujours accéder aux variables avec myObj[prop]
 
 -The definitive guide :
-expression ? compute the value doesnt do anything
-statement ? dont have a value but alter the programm state
 Pourquoi utiliser des arrows functions ? Arrow functions are most commonly used when you want to pass an unnamed function as an argument to another function.
 
 -Différence entre méthode et fonction ?
@@ -92,18 +92,23 @@ binary : 0b0100
 octal : 0o1247
 
 -Floating points : 
-.58 signifie 0.58
+.58 signifie 0.58 !
 6.02e23 // 6.02 × 10²³
 1.4738223E-32 // 1.4738223 × 10⁻³²
 
 Standardiser : let billion = 1_000_000_000;
 
 Arithmetiques :
-*puissance : Math.pow()
-*arrondi au plus pret : Math.round
-*arrondi au plus grand : ceil
-*arrondi au plus bas : floor
-*absolu : Math.abs
+*puissance : ?
+Math.pow()
+*arrondi au plus pret : ?
+Math.round
+*arrondi au plus grand : ?
+ceil
+*arrondi au plus bas : ?
+floor
+*absolu : ?
+Math.abs
 *max, min, peuvent prendre 3 champs
 *nombre aléatoire entre 0 et 1 : Math.random()
 *PI : Math.PI
@@ -112,12 +117,12 @@ Arithmetiques :
 sin, log 
 
 ES6 :
-*racine carré de la somme au carré des elements : Math.hypot(x,y,z)
+*racine carré de la somme au carré des elements : Math.hypot(x,y,z) !
 Log10
 log2
 *Le signe d'un élément : 
 Math.sign(x) -1 0 ou 1
-*Supprimer la partie fractionnelle : 
+*Supprimer la partie fractionnelle ? 
 Math.trunc
 
 Les erreurs sur les nombres en js :
@@ -125,7 +130,7 @@ Il n'y a pas dérreurs mais on aura soit NaN, soit des Infinity - et + selon la 
 Number.POSITIVE_INFINITY ou Number.NEGATIVE_INFINITY
 
 *Convertir en Int :
-Number.pareseInt(x)
+Number.parseInt(x)
 
 *Convertir en Float :
 Number.parseFloat(y)
@@ -146,10 +151,13 @@ Math.isNan(x) toute autre opération est fortuite
 
 *Les comparaisons par contre passent
 
-Dates and times :
+Dates and times : !!
 *timestamp that specifies the number of elapsed milli‐seconds since January 1, 1970
 *Obtenir la date de maintenant en String : now.ISOString(),
 en timeStamp : Date().now() ou getTime()
+*Comment obtenir la date en / :
+ToLocaleDateString()
+ToLocaleTimeString()
 
 Différence entre Date et Date() ? objet et l'autre non, getTime() l'autre now()
 
@@ -158,6 +166,7 @@ Différence entre Date et Date() ? objet et l'autre non, getTime() l'autre now()
 	chaque caractère : 16bits
 *Certains caractère depasse t'il 16 ?
 si un caractère depasse16 on associe 2 de 16bits, le length sera 2 mais c'est un seul caractère
+
 *Comment écrire sur plusieurs lignes ?
 Ecrire sur plusieurs lignes avec \ et revenir à la ligne
 "lkesklfnlke\
@@ -170,4 +179,73 @@ rjerkjre" va nous donner une seule ligne
 *Retour à la ligne sans nouvelle ligne ? \r
 
 String in js api :
-js p53
+======
+*Retouner les 3 derniers caractères ? "aklkal".slice(-3)
+*Supprimer x premiers caractère ?
+string.slice(x)
+
+*Renvoyer un tableau de caractère découper selon quelque chose ?
+"aklskdslk".split(" ")
+
+*Index => 
+*comment trouver l'index d'une chaine de caractère à partir d'un certain index ?
+"jkjezkj".indexOf("j",2)
+
+-Contient : 
+*Le String contient ? "jkej".includes("x)
+*Le String commence avec ? startsWith("kk")
+*Le String se termine avec ? endsWith("nn")
+
+-Modification du String :
+Remplacer tout la premiere occurence ?
+string.replace("nn","hh")
+*Remplacer toutes les occurences ?
+string.replaceAll("nn", "hh")
+
+-Inspecter les caractères individuels 
+*nombre ASCII d'un caractère ?
+charCodeAt(x)
+utiliser codePointAt() pour les caractères qui depassent 16 bits
+
+-String padding functions :
+*ajouter des caractères au débuts ? 
+string.padStart(x) ajoute espace au debut
+string.padEnd(x,"*") ajoute x * à la fin
+
+trim, repeat, concat à ne pas oublier
+
+-Strings sont immutables, les operations renvoient de nouveaux strings
+-Strings sont des tableaux on peut accéder à des indices
+-On peut utiliser `${variableJs}`
+On peut en utiliser plusieurs :
+`${filename} : ${exception.message}`
+
+-REGEXP:
+*on crée un pattern avec 
+let pattern = /\d+/g;
+*On peut tester si un string match avec :
+pattern.test(string)
+
+*Chercher l'index de la premiere occurrence  d'un pattern ?
+string.search(pattern)
+
+*Faire un tableau des strings qui match le pattern ?
+string.match(pattern)
+
+*Remplacer ce pattern :
+string.replace(pattern)
+
+*Strings diviser par un pattern :
+string.split(pattern)
+
+-Boolean :
+renvoie faux pour les valeurs suivantes :
+undefined, null, "", 0 -0 NaN, 
+
+-Différence entre null et undefined
+
+*null veut dire une abscence de valeur, est un objet quand on utilise typeof
+It can be used to indicate “no value” for numbers and strings as well as objects
+
+*undefined It is the value of variables that have not been initialized and the value you get when you query the value of an object property or array element that does not exist.
+

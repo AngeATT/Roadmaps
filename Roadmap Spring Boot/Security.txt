@@ -1,0 +1,20 @@
+CSRF :
+Faire une requete avec un nom de domaine autre que celui dont appartient le domaine
+exemple :
+Je suis sur un site y.com
+Je fais un formulaire avec comme post : www.bank.com/transfer
+avec tous les details pour transferer du djai vers mon compte ou cet envoi peut être automatisé avec du js
+
+-Comment s'en prémunir ?
+les deux requetes sont pareils comment les différentier ?
+
+*Safe Methods Must be Idempotent
+les http Get, HEAD, Options et trace ne doivent pas changer l'état de notre application
+
+-_csrf token :
+ajouter un toek csrf aux requetes de tel sorte qu'il ne soit pas visible par l'extérieur et le serveur check si le token dans le cookie et celui dont il dispose sont les mêmes
+
+Pour diminuer la charge de vérification : les méthodes qui ne changent pas l'état de notre application n'en ont pas besoin
+Eviter d'envoyer le token avec get sinon il 
+
+-SameSite
