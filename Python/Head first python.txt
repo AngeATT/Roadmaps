@@ -1,0 +1,19 @@
+start : 80
+*Comment déclarer une variable ?
+aucun mot clé
+
+-L'indentation compte en python, tab c'est 4 espaces
+-tableaux peuvent tout contenir
+
+"_" est le caractère par defaut, utiliser pour les boucles for par exemple
+
+for _ in range(5) :
+-on utilise rarement les {} en python
+-dir permet d'avoir toutes les methodes qu'on peut utiliser sur une variable
+-help(dir.nom_methode) permet d'avoir la doc sur cette méthode
+
+-Map = dictionnaire en python
+Set, list, tuples
+
+-random.choice(collections (pas set))
+114

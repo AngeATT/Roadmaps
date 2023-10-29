@@ -31,6 +31,7 @@ equality operator, which attempts to convert both values being compared to a com
 1   ==  2  // false
 1   == '1' // true
 "3" ==  3  // true
+" 3" == 3 //true
 
 The strict equality operator does not perform a type conversion.
 
@@ -220,7 +221,7 @@ trim, repeat, concat à ne pas oublier
 On peut en utiliser plusieurs :
 `${filename} : ${exception.message}`
 
--REGEXP:
+-REGEXP: !
 *on crée un pattern avec 
 let pattern = /\d+/g;
 *On peut tester si un string match avec :
@@ -247,5 +248,109 @@ undefined, null, "", 0 -0 NaN,
 *null veut dire une abscence de valeur, est un objet quand on utilise typeof
 It can be used to indicate “no value” for numbers and strings as well as objects
 
-*undefined It is the value of variables that have not been initialized and the value you get when you query the value of an object property or array element that does not exist.
+*undefined It is the value of variables that have not been initialized and
+!!!!! the value you get when you query the value of an object property or array element that does not exist.
 
+==Symbols 
+Quel est son utilité ?
+Avant ES6, les propriétés des objets ne pouvaient être que des stings et il était possible d'override les porpriétés d'un objet dans une autre partie du code avec obj[prop] = ...;
+Donc Symbol a été crée et donc let s = Symbol(propname) nous renvoie à chaque fois quelque chose de différent de tel sorte qu'il est immpossible d'accéder, de modifier notre porpriété de cet objet quelque part d'autre dans notre code
+
+Symbol.for :
+Symbol.for() always returns the same value when called with the same string. 
+
+The Global Object : !
+The global object is a regular JavaScript object that serves a very important purpose: the properties of this object are the globally defined identifiers that are available to a Java‐Script program.
+
+When the JavaScript interpreter starts (or whenever a web browser
+loads a new page), it creates a new global object and gives it an initial set of properties
+that define:
+• Global constants like undefined, Infinity, and NaN
+• Global functions like isNaN(), parseInt() and eval()
+• Constructor functions like Date(), RegExp(), String(), Object(), and Array()
+(§3.9.2)
+• Global objects like Math and JSON (§6.8)
+
+Sur node c'est global, sur les browsers c'est window
+Quelque soit le contexte on peut y accéder avec globalThis
+
+28-10-23
+3.8==Mutable et immutables
+Les pimitives et les stings sont immutables : leurs valeurs ne change pas, on renvoie une nouvelle variable
+si on fait toUpperCase() sur un string, on ne va pas modifier ce string
+*Comparaison :
+les primitives sont comparés par valeur
+
+Les objets eux sont mutables et ils sont comparé par references
+
+==Conversion :
+si l'opération invoque un nombre il essaie de conertir les 2 opérandes si possible fait l'opération sinon renvoie un NaN
+"", 0, null, undefined , -0, nan sont : faux
+-Les espaces annulent la conversion d'un string en nombre : " 25" et "25" sont différents lorsque c'est implicite sinon ils sont égaux
+-Conversion explicite avec :  Boolean(), Num
+ber(), and String()
+-Préciser le nombre après la virgule ?
+let x= 12.12552
+x.toFixed(2) //12.12
+-Donner la forme exponent base 10 ?
+x.toExponentiel(2)
+-Comment convertir même avec des alphanumerique en integer ou en float ?
+parseInt("") et parseFloat("")
+
+*Regles : ne doit pas commencer par autre chose qu'un caractère de la base 2, 8, 10 ou ... à convertit ( exple commence par 0 ou 1 si base 2 sinon ça sort NaN )
+*parseInt ne va renvoyer que des int
+*parseFloat int comme float
+*si c'est en base octal ou hexa va convertire en base 10 sauf si on précise en second arguments en quoi on veut convertir
+
+==Primitive to object 
+skip
+
+==Declaration de variables 
+Retient qu'il est possible d'utiliser const pour les boucles mais la variables sera const uniquement pour une itération
+*Scope :
+Block scoped
+JavaScript class and function definitions are blocks, and so are the
+bodies of if/else statements, while loops, for loops, and so on.
+
+*Qu'en est il de la rédéclaration ?
+il est possible de rédéclarer une variable dans un statement mais c'est déconseiller 
+if( x == 2){
+let x = 3;
+console.log(x)}
+
+-Différences entre var et let
+cite les 3 majeurs différences entre var et let 
+*lorsqu'on déclare avec var on assigne la variable à l'objet global, tandis que let est block scoped
+*on peut redeclarer les variables lorsqu'on les déclare avec var
+C'est quoi le Hoisting ?
+*on peut utiliser une variable avant sa déclaration lorsqu'on la declare avec var : hoisting(la declaration monte au top du fichier)
+
+==Destructuring Assignment
+let [x,y] = [1,2]; // Same as let x=1, y=2
+[x,y] = [x+1,y+1]; // Same as x = x + 1, y = y + 1
+[x,y] = [y,x]; // Swap the value of the two variables
+[x,y]
+75
+
+chap 4 Expressions
+*C'est quoi ReferenceError ?
+Lorsqu'on ne trouve pas la valeur d'un expression simple
+
+*C'est quoi un TypeError ?
+*Comment se passe l'évaluation de l'accès à une propriété d'un tableau ou d'un objet ?
+*Comment éviter cette erreur ? en prod ?
+*C'est quoi l'optional chaining ?
+*La différence entre typeError et ReferenceError
+
+-Invocation expressions : calling or executing a function or a method
+*Quand peut on avoir un TypeError lors de l'évaluation d'une fonction, de l'invocation d'une fonction
+*Ordre dans lequel l'invocation d'une expression se déroule.
+*On retourne quoi lorsque la méthode est un void ?
+*Comment éviter un typeError à l'invocation d'une méthode ?
+*COmment on crée un objet ?
+Décrit ces 3 opérations : 
+o.m() // Regular property access, regular invocation
+o?.m() // Conditional property access, regular invocation
+o.m?.() // Regular property access, conditional invocation
+*Comment modifier l'ordre de précédence des opérateurs ?
+*Règles pour l'addition + ?, quand il convertit en string quand il additionne  des nombres ?
