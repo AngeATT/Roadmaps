@@ -1,0 +1,115 @@
+chaque jour check : 
+3 leetcodes 2h max
+1 roadmap java
+1 roadmap spring boot
+1 roadmap back end ( lire surtout les bails de sécurité)
+1 design pattern
+1 roadmap typescript
+1 roadmap angular https://guide-angular.wishtack.io/angular/composants
+1 codewars typescript
+skills : 
+-APIS (spring boot )
+-DataBase : Postgresl
+-MongoDB
+-extremely important : relations between entites
+-authentication : jwt, third party, delayed jobs, deploying application
+E-commerce
+ClassManager
+top100 movies
+financeApp
+
+Nouveaux objectifs :
+-LeaderShip : contacter roméo et christian amani pour avoir une bonne base en architecture
+-Qualité du code : lire des bouquins
+-Architecture hexagonale, DDD lire lire et relire
+-Base de données : les bases
+-Comment déployer ? c'est quoi déployer sur java
+-Jenkins, Swagger et toutes les technos autour des projets
+
+07/23 :
+17/07/2023
+Java : error et exceptions, error et exception, checked et unchecked exception
+Spring configuration : 
+Spring container, DI, @Configuration , Component scanning et autowiring, autoconfiguration, @SpringBootApplication
+
+back-end : POSIX à revoir
+codewars : 0
+
+18/07/23 :
+journée de taf sur jasper report m'a pris toute la day
+sport : ok
+angular : provider
+
+19/07/23 pareille
+20/07/23
+memory management in java
+Method Area, Heap Area, Reference Type, Strong reference, Weak reference, Soft reference, Phantom reference
+
+26/07/2023
+28/07/2023 nouveaux objectifs
+
+01-07-2023 Septembre on se reconcentre
+observer pattern
+04-09-2023 
+decorator pattern
+BFS et backtraking à voir
+05-09-2023
+backtracking
+headd first page 100
+design 147
+
+06-08
+headfirst 100-120
+designP 140-171
+
+07-08
+head first 120-249 ( sauter les parties inutiles)
+blc il nous faut des projets que des projets dès demain on commence, des plus petits au plus grand
+
+08-10 weekend
+
+11- boulot tâche difficile
+12&13- boulot et fatigue et examens
+
+15-
+java p335
+
+18-
+head first 335-353
+
+19 head first 390
+Learning Angular-Packt 59
+boulot unp
+unp deprimé jsp pk
+projet deals jumia
+
+20
+head java 413
+
+21
+head java 431
+
+22 : floor phase
+23 : samedi
+24 : dimanche : boulot et unp de head 450
+25 head first :459
+26 : 
+
+05-On avance en algo mais situation un peu grave impossible de se focus 2h
+Mais on garde le moral haut rome ne s'est pas batit en 2j
+10-Periode de bosse, weekend et periode seche
+577 à revenir dessus et comprendre les stream I/O
+11- on a bien bosser aujourd'hui, on doit garder le cap, le matin on a vu le file outputstream le soir relations jpa
+https://gayerie.dev/epsi-b3-orm/javaee_orm/jpa_relations.html
+
+12-Full focus sur notre app de resi : voir dossier note
+
+28-10 
+app de resi existe déjà on move on
+on veut faire du 30+ pages par jour python et js
+
+03-11
+js : 154
+python : 216
+react : 34
+codewars : 2js

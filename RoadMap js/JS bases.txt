@@ -1,4 +1,4 @@
-2h par jour
+SL : veut dire slow on apprendre au fur et à mesure
 
 =>Pourquoi utiliser let au lieu de var ?
 var override les variables sans lever d'exception, var name = 10;
@@ -325,32 +325,153 @@ cite les 3 majeurs différences entre var et let
 C'est quoi le Hoisting ?
 *on peut utiliser une variable avant sa déclaration lorsqu'on la declare avec var : hoisting(la declaration monte au top du fichier)
 
+30-10-23 : j2 : p75
 ==Destructuring Assignment
+*C'est quoi la destructuration ?
+Permet d'assigner des valeurs à plusieurs variables
+exemple :
 let [x,y] = [1,2]; // Same as let x=1, y=2
 [x,y] = [x+1,y+1]; // Same as x = x + 1, y = y + 1
 [x,y] = [y,x]; // Swap the value of the two variables
 [x,y]
-75
+A droite un tableau ou un objet et à gauche une structure qui mime l'objet en questino et ainsi donc assigne aux variables les valeurs.
+*On peut l'utiliser avec une fonction 
+*On peut l'utiliser avec un objet
+
+Utilité évidente 
+=> permet de swap rapidement deux variables
+=> permet de renvoyer un tableau et d'assigner à des variables les valeurs renvoyés
+=>permet de loop sur des propriétés d'un objet
 
 chap 4 Expressions
 *C'est quoi ReferenceError ?
-Lorsqu'on ne trouve pas la valeur d'un expression simple
+Lorsqu'on ne trouve pas la valeur d'un expression simple (exemple variable a non declarer et on l'appelle)
 
 *C'est quoi un TypeError ?
-*Comment se passe l'évaluation de l'accès à une propriété d'un tableau ou d'un objet ?
+-Cas des expressions :
+With either type of property access expression, the expression before the . or [ is first
+evaluated. If the value is null or undefined, the expression throws a TypeError
+-Cas des fonctions : 
+l'opérande gauche avant les () n'est pas une fonction
+
+*Quand utiliser . et quand utiliser [] ?
+on utilise . lorsque la propriété et elle n'a pas d'espace ou de caractère spéciaux ou si c'est un tableau
+
+*Si on essaie d'appeler une propriété qui n'existe pas pour une variable on a quelle erreur ?
+
+
 *Comment éviter cette erreur ? en prod ?
-*C'est quoi l'optional chaining ?
+On utilise l'optional chaining :
+a?.prop
+si a n'est pas null ou undefined on accède à la propriété
+a?.func()
+si a n'est pas null ou undefined (car ce sont les 2 seulement qui n'ont pas de proprietes)
+ et a est un objet qui a la propriété func qui est une func on accède à cette fct 
+questions :
+si func n'est pas une fonction keskisepas ?
+si func est undefined keskisepass ?
+
 *La différence entre typeError et ReferenceError
+ReferenceError quand la variable existe mais est undefined ou null
+TypeError lorsqu'on a un a.quelquechose et a est undefined ou null
 
 -Invocation expressions : calling or executing a function or a method
-*Quand peut on avoir un TypeError lors de l'évaluation d'une fonction, de l'invocation d'une fonction
-*Ordre dans lequel l'invocation d'une expression se déroule.
+*Quand peut on avoir un TypeError lors de l'évaluation d'une fonction, de l'invocation d'une fonction ?
+
+If the value of the function expression is not a function, a TypeError is thrown
+
+*Ordre dans lequel une fonction est évaluée ?
+-L'opérande gauche est évalué
+-La liste des arguments est evaluée
+-La fonction prenant en compte les arguments est évaluer et produit un résultat
+
 *On retourne quoi lorsque la méthode est un void ?
+Undefined
 *Comment éviter un typeError à l'invocation d'une méthode ?
-*COmment on crée un objet ?
+optional chaining
+*Comment on crée un objet ?
+let o = {}
 Décrit ces 3 opérations : 
 o.m() // Regular property access, regular invocation
 o?.m() // Conditional property access, regular invocation
 o.m?.() // Regular property access, conditional invocation
 *Comment modifier l'ordre de précédence des opérateurs ?
-*Règles pour l'addition + ?, quand il convertit en string quand il additionne  des nombres ?
+
+Avec des ()
+
+*Règles pour l'addition + ?,
+quand est ce qu'il convertit en string ? quand est ce qu'il additionne  des nombres ?
+
+Si il y a au moins un string il va convertir les 2 en string
+sinon il va convertir les 2 en string
+1 + 2 + " blind mice" // => "3 blind mice"
+1 + (2 + " blind mice") // => "12 blind mice"
+
+*Quel est l'ordre des operators en js ?
+ 
+*Comment est évalué l'égalité entre 2 statement ?
+NaN value is never equal to any other value même lui même
+Comparaison par reference comme en java
+
+*Egalité avec les conversions : == ?
+- undefined et null sont égaux
+-Si un est un number on convertit l'autre en number aussi
+-si un est true ou false on convertit l'autre en 0 ou 1 selon le true ou le false
+-objet et string on essaie de convertit l'objet en string
+
+Note in particular that string
+comparison is case-sensitive, and all capital ASCII letters are “less than” all lowercase ASCII letters.
+asci A-Z 65-90
+ascii z-z :  a-z is 97-122
+
+*“Zoo” comes before the string “aardvark”. ? dans une comparaison ? pourquoi ?
+
+!Comment se fait les conversions lors des comparaisons et lors des additions ?
+
+!!Pour les comparaisons, js convertit en nombre si il y a au moins un nombre.
+"11" < 3 false
+"11" < Nan => false
+
+==The in operator 
+*On doit avoir quoi à gauche ? et quoi à droite ?
+Si à drotie c'est pas un objet on fait comment ?
+
+==The instanceof operator 
+The operator evaluates to true if the leftside object is an instance of the right-side class and evaluates to false otherwise.
+d instance of Date par exemple
+100
+
+126j1
+
+==Loop for of :
+*Quelle condittion il faut remplir pour utiliser for of ?
+*Comment itérer à travers un objet via ses keys ? via ses values ?
+*Peut on itérer sur les strings ?
+*Code pour donner les mots unique d'une phrase ?
+*Comment écrire le for/await loop ?
+*Quel est la différence entre le for/in et le for of ?
+*Sur quel exemples de données en js on peux itérer ?
+*Comment donner un nom à des statements ? 
+*Quel condition il faut remplir pour executer un for in ?
+*Quel classes le for in n'affiche pas ?
+*C'est quoi break et break label ? donne un exemple
+*Différence entre break et continue ?
+*Différence entre un for loop et un while loop ?
+*try catch : peut on catch n'importe quelle exception ? si oui cmt
+*Particularité du strict code ?
+*C'est quoi un module en js ?
+*Comment donner un alias à un code js ?
+
+Objects 
+*C'est quoi un objet ?
+*C'est quoi un prototype ?
+*Les 3 propriétés des propriétés des objets ?
+*Quel est le prototype des objets crées avec new ? avec l'expression litérale ?
+*Prototype chain ?
+*Qui n'a pas de propriété prototype ? à quoi sert cette propriété ?
+*Créer un objet qui a un prototype donnée ?
+*Pourquoi utiliser Object.create ?
+*Comment faire passer par copy une référence ?
+*Comment accéder à une propriété d'un objet ?
+*Comment se passe l'héritage avec Object.create ?
+154

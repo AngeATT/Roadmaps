@@ -1,0 +1,4 @@
+SecurityFilterChain 
+-Cache control : gérer comment le navigateur 
+-XSS attacks.
+-htts

@@ -1,0 +1,37 @@
+Je sais tu vas oublier donc :
+jusqu’en janvier : no stress maitriser java, js, python et les algorithmes
+Head first java puis l'autre bouquins ensuite suivre ça
+https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/
+Definitive JS
+head first python
+DANS 5 ANS :
+1. Algorithms and data structures
+2. Python development
+3. Machine learning / AI development
+4. Relational and non-relational databases
+5. Cloud computing
+
+Technique :
+J1 : full lecture des chapitres
+J2 : lecture et on note
+j3 : prendre un chapitre et faire des minis exos avec
+
+POur novemebre et decembre appliquer cette technique
+On veut faire au moins 30pages de js, java et python par jour
+(java on fait ça en entreprise donc juste lire 30 mins dessus ça gère)
+Le reste carte blanche
+j1 lecture et questions
+j2 reprise lecture et autres questions
+j3 coder
+
+Donc 29-10-23
+js : j1 75-
+python j1 100-
+java : 
+
+30-10-23
+js : j2 
+
+création liste entreprise
+31-10
+js : j2 75-100
