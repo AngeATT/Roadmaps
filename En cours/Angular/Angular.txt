@@ -1,0 +1,19 @@
+==Module en angular :
+An Angular module is dedicated to an application domain
+Such as orders or customers for an e-shop application, or a user workflow, such as order checkout or user registration. 
+
+*Generally,
+it addresses a particular set of capabilities that an application can have.*
+
+Guard :
+canActivate :
+
+maintenant on utilise une arrow function lorsqu'on veut faire un guard :
+
+on exporte une fonction flechée qui renvoie true ou false
+voir : authGuard
+
+Un peu de programmation orienté asp
+
+
+==>

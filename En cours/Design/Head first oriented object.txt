@@ -1,0 +1,94 @@
+Quels sont les étapes pour écrire un bon programme ?
+Comment peux tu définir un bon programme ?
+
+*Etape 1 : l'application fonctionne
+
+*Etape 2 : ajouter de la flexibilité avec l'oo basic (encapsuler les objets, objets valeurs etc), pas de code dupliquer, chaque objet controle ses propres comportements, facile à étendre, solide et flexible.
+=> FLexibilité : OO, Encapsulation, pas de duplication, bon design(pas de répétition de code), facile à étendre et solide.
+
+-couplage faible
+-utilisation de design patterns, open to extensions closed to modification, code reusable
+
+étape 3 : Maintenabilité et réutilisation
+quand on code il faut se demander à chaque fois, à quel point il sera facile de faire une modification ?
+
+-Great software is ?
+*Fait ce que le client veux
+*well-designed (means ?)
+=> utilisation d'énums
+=> bonne encapsulation
+=> responsabilité de chaque classe
+*well-coded ?
+*easy to maintain, reuse and extend
+
+-Les étapes ?
+*S'assurer que le programme fait ce pour quoi il a été crée ?
+*Apply OO principles to add flexibility
+*Strive for a maintenalbe, reusable design
+
+==Règles sur les objets :
+*Un objet devrait faire ce que son nom indique
+*Un objet répresente un seul concept Duck != yellow plastic duck etc
+*éviter la duplication sur les objets
+
+==Quand on fait une méthode il faut l'analyser rapidement comme suit :
+écrire ce qu'elle fait et s'assurer quelle le fasse réellement
+
+==Etape 2 : travail sur le design 
+Si un code est dupliquer => trouver un moyen de l'encapsuler, inhéritance et polymorphism
+
+-Quel est le rôle de l'encapsulation ?
+*Protéger des informations sensible du reste de l'app 
+*Permettre de changer un code sans avoir besoin de tout changer
+
+Définitions :
+flexibilité ? Dépend de encapsulation et design
+Encapsulation ?
+Fonctionnalités ?
+Design pattern
+
+==Etape 3 :Strive for a maintanable reusable design 
+*C'est quoi la délégation ?
+*Probleme : on a une classe inventaire qui a des guitares, on a une classe guitare
+Si on veut ajouter une propriété dans notre classe guitare on doit modifier trop de chose :
+Constructeur et la méthode rechercher composée de if else
+
+=> on va mettre une méthode comparer dans notre guitare qui va s'occuper de la comparaison de tel sorte que guitare soit la seule classe ou on détermine si notre guitare est égale à une autre en 
+=> Tout ça c'est la délégation
+
+105
+use case => what the system do ? Décrire nos cas d'utilisations dans les moindres détails.
+use case => one goal
+Requirements : Contraintes de notre systeme
+=>On décrit le cas d'utilisation, on y ajoute ce que le client peut aimer sans qu'il le sache lui même, on le compare aux requirements
+=> Voir ou les requirements interviennent dans le process
+139 ; noter
+
+*C'est quoi un requirement ? 
+C'est ce dont notre système a besoin pour fonctionné correctement.
+-Permet de savoir ce que le client veut
+-S'assurer que nos requirements couvrent toutes les étapes dans les uses cases
+*C'est quoi un use case ?
+étapes détaillé pour realiser un objectif
+-Utiliser les uses cases pour savoir ce que le client a peut être oublié de nous dire
+
+160
+195
+==La délégation permet d'avoir un couplage faible
+==Ainsi la modification d'un objetne sera pas lié aux autres objets 
+
+**Notion : délégation rôle protéger contre le changement d'implémentation
+
+*Prêterattention aux pronoms(personne, endroit ou chose) utilisés dans les uses cases : ils donne des indications d'implémentations
+Ces pronoms sont en fait des classes
+Toutefois faire la différence entre nouns nécessaires et ce qui ne l'est pas
+
+*Il ne faut pas se focus sur les détails d'implémentation, (ex un bark au lieu du dog lui même)
+
+*un use case explique clairement et de manière accurate ce que fait un sytem après on fait une analyse textuelle 
+
+*Pronoms étant les classes les verbes en sont les méthodes
+
+224
+233=> Tout change :
+On veut ajouter les mandolins à notreapp de recherche de guitare :

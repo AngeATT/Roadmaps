@@ -113,3 +113,8 @@ js : 154
 python : 216
 react : 34
 codewars : 2js
+
+04-11
+js-158
+pythonh :
+codewars : 40 

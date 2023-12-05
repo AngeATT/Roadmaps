@@ -1,0 +1,14 @@
+Inscription : envoie le mail avec un code ou cliquer dessus pour activer
+
+Use case : 
+inscription validée
+envoie mail de confirmation avec lien valide
+
+//jwt 
+
+faire le mail pour envoyer
+créer son compte gmail pour envoyer via smtp
+utiliser l'aop pour envoyer le mail 
+
+//sur le front :
+créer la page qui va dire email confirmé

@@ -1,0 +1,77 @@
+-Angular utilise du codenon natif, il doit être compilé pour être utilisé
+
+-Création de projet, desactiver routing, desactiver mode strict, no standalone
+
+-Structure d'une application angular
+-property binding : envoyer du typescript à la page
+-utilisation de ngModel pour sauvegarder et afficher la variable dans le form
+-C'est quoi l'importation ? il sert à quoi ?
+Permet d'utiliser une pièce, un module d'angular dans le notre
+-Comment utiliser bootstrap ?
+-Rôle du main.ts, bootstratp 
+
+-Que se passe t'il vraiment quand angular build ?
+-Rôle de app.module.ts ?
+-C'est quoi un module ?
+-Rôle du bootstrap ? Dire à angular quand il se lance quel composant il doit connaitre
+
+-A quoi sert la déclaration ?
+Permet de dire à notre très cher angular, à notre module qu'un composant exste et ou il se trouve car par defaut angular ne scan pas tout les fichiers
+
+-On peut utiliser des select by attribute,select by class selector :
+selector : [elem] => <divelem></div> au lieu de <elem> </elem>
+
+**String interpolation ? Comment faire passé une variable du ts au html
+- {{ }} on peut appeler une méthode, on peut appeler une fonction seule condition renvoyer un string
+
+**Comment interragir dynamiquement avec des propriétés ?
+!!Il faut faire la différence entre propriétés du dom et propriétés du html
+le DOM fournit une interface de programmation pour interagir avec le contenu HTML, toutes les propriétés ne sont pas exposées de manière uniforme
+
+propriétés binding : 
+[disabled] = "!allowed" par exemple
+!!Propriétés : Une propriété est une valeur qui peut être manipulée à l'aide de JavaScript, innerText par exemple
+
+
+!!Attribut : Un attribut est une caractéristique d'un élément HTML définie dans le code HTML
+Les attributs fournissent des informations supplémentaires sur un élément et sont définis dans la balise HTML elle-même
+
+**C'est quoi la différence entre html et le DOM ?
+HTML est le langage utilisé pour définir la structure et le contenu d'une page web, tandis que le DOM est une représentation en mémoire de cette structure, accessible et manipulable à l'aide de langages de script tels que JavaScript.
+
+
+**Event binding : comment réagir à un event ?
+(event) = "fct"
+
+**Comment savoir les évènements et les propriétés bindable ? on peut console.log(propriete || evenement) oubien se referer à mdn
+
+**Comment récupérer des données via un event ?
+Lorsqu'on passe une fonction à un evenement, on peut lui apsser en parametre $event qui contient les données émis via cet evenement
+
+**Comment réagir aux events dans les 2 directions ? Two-ways data binding :
+=> [(ngModel)] = ""
+
+**C'est quoi une directive ?
+Directive structurelle : *ngIf=""
+Comment referencer un bout de codeen angular ?
+En utilisant ngTemplate :
+<ng-template #nomTemplate>
+html
+</ng-template> 
+
+**Comment binder un style ? mettre à jour un style en fonction d'une fonction ?
+Supposons qu'on veuille modifier la couleur d'une div de la valeur d'une propriété dans notre ts
+Alors on peut binder un attribut du css grâce à ngStyle :
+[ngStyle] entre crochet car on veut binder : lier la valeur de notre style à une fonction de notre ts donc [ngStyle] = {'background-color': "fct"} ou utilise le camel Case
+
+**Comment binder une classe pour un element ?
+en faisant pareil et en utilisant ngClass avec un objet => 'class' : 'expression qui renvoie true pour l'activer'
+
+**La directive *ngFor
+comment obtenir l'index ?
+*ngFor = "let x of X; let i = index"
+
+**Plannification d'une app 
+divisier en fonction des responsabilités => composants
+divisier en fonctions des objets =>
+créer des entités

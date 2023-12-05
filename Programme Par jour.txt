@@ -16,22 +16,19 @@ J1 : full lecture des chapitres
 J2 : lecture et on note
 j3 : prendre un chapitre et faire des minis exos avec
 
-POur novemebre et decembre appliquer cette technique
-On veut faire au moins 30pages de js, java et python par jour
-(java on fait ça en entreprise donc juste lire 30 mins dessus ça gère)
-Le reste carte blanche
-j1 lecture et questions
-j2 reprise lecture et autres questions
-j3 coder
+Pour novembre et decembre appliquer cette technique :
+Javascript
+python
+design oo
+codewars leetcode et codingame
 
-Donc 29-10-23
-js : j1 75-
-python j1 100-
-java : 
+30 mins sur le design
+2 code wars
+30 mins sur js
+2 codewars
+Un type d'algos
+milieu de journée c'est mort on dort
 
-30-10-23
-js : j2 
+le soir angular/react projet
 
-création liste entreprise
-31-10
-js : j2 75-100
+
