@@ -1,0 +1,65 @@
+p45:
+-Atomic transaction
+An atomic transaction is a possibly complex series of actions that is considered to be a single
+operation by those who are not involved directly in performing the transaction.
+Example : retrait de 100$ à la banque qui nécessite la vérification du solde, la soustraction au solde si oui, la maj du solde, et l'envoie de l'argent.
+
+-CRUD
+
+Qualités d'une bonne db :
+*Retrieval=> notre bd doit nous permettre de retrouver n'importe quoi qu'on a enregistrer
+
+*Consistency :
+If you perform the same search twice in a row, you should get the same results.
+
+*Validity :
+Consistency means different parts of the database
+don’t hold contradictory views of the same information.
+The user interface could also make the user pick the state from a drop-down list and avoid this
+problem, but the database should still protect itself against invalid data wherever possible.
+
+Easy Error Correction :
+changer le nom de tous les produits d'un certains type devrait être trivial. Mias il faut un bon design pour ne pas changer tous les produits et seulement un certains type.
+
+Speed : designer de tel sorteà obtenir rapidement les informations nécessaires.
+
+Atomic transaction :
+The transaction either happens completely or none of its pieces happen
+
+ACID :
+ACID is an acronym describing four features that an effective transaction system should provide.
+Atomicity, Consistency, Isolation, and Durability.
+-Isolation means the transaction isolates the details of the transaction from everyone except the person
+making the transaction.
+Anyone who looks in the database
+will see the $100 somewhere, either in Alice’s account before the transaction or in Bob’s account
+afterward.
+Durability 
+means that once a transaction is committed, it will not disappear later.
+Once the transaction is committed, it is final
+
+BASE : for nosql
+BASE stands for Basically Available, Soft state, and Eventually consistent.
+B :
+Relational databases spend a lot of effort requiring data to be immediately consistent. These databases do, however, guarantee that any query will return some sort of result, even if it’s a failure 
+Soft state :
+means that the state of the data may change over time, Because these databases do not
+require immediate consistency, it may take a while for changes to filter through the entire system. 
+
+BACKUP :
+Good database design can help make backups a bit easier. If you arrange the data so that changes
+occur in a fairly localized area, you can back up that area frequently and not waste time backing up
+data that changes only rarely
+
+Low Cost and Extensibility
+
+EASY OF USE 
+Just by looking at the names of the tables, fields, and other
+database entities that organize the data, this type of user should be able to figure out how different
+pieces of data go together and how to use them to retrieve the data they need.
+
+SECURITY
+using a database design that restricts users’ access to what they really need to
+know can help.
+
+Brewer’s theorem : CAP
